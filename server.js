@@ -141,6 +141,7 @@ router.post("/find-all-by-name", function (req, res, next) {
   let t = setTimeout(() => {
     next({ message: "timeout" });
   }, TIMEOUT);
+  console.log(req.body);
   Person.create(req.body, function (err, pers) {
     if (err) {
       return next(err);
